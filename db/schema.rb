@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_04_22_075946) do
+ActiveRecord::Schema[7.0].define(version: 2024_04_22_142618) do
   create_table "users", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", default: "", null: false
@@ -24,4 +24,20 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_22_075946) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "words", charset: "utf8", force: :cascade do |t|
+    t.string "content", null: false
+    t.integer "level_id", null: false
+    t.text "meaning"
+    t.text "phonetic_symbol"
+    t.text "part_of_speech"
+    t.text "etymology"
+    t.text "example_sentence"
+    t.text "other"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_words_on_user_id"
+  end
+
+  add_foreign_key "words", "users"
 end
