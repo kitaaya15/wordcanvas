@@ -17,7 +17,8 @@
 
 | Column                              | Type       | Options                        |
 |-------------------------------------|------------|--------------------------------|
-| new_word                            | string     | null: false                    |
+| content                             | string     | null: false                    |
+| level_id                            | integer    | null: false                    |
 | meaning                             | text       |                                |
 | phonetic_symbol                     | text       |                                |
 | parts_of_speech                     | text       |                                |
