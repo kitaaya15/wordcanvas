@@ -1,0 +1,50 @@
+<%= form_with model: word, local: true do |f|%>
+  <div class="field">
+    <%= f.label :content, "単語" %><br />
+    <%= f.text_area :content, id:"word_content" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :level, "習得度" %><br />
+    <%= f.collection_select(:level_id, Level.all, :id, :name, {}, {class:"select-box", id:"word_level"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phonetic_symbol, "発音記号" %><br />
+    <%= f.text_area :phonetic_symbol, id:"word_phonetic_symbol" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :part_of_speech, "品詞" %><br />
+    <%= f.text_area :part_of_speech, id:"word_part_of_speech" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :meaning, "意味" %><br />
+    <%= f.text_area :meaning, class: :form__text, id:"word_meaning" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :etymology, "語源" %><br />
+    <%= f.text_area :etymology, class: :form__text, id:"word_etymology" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :example_sentence, "例文" %><br />
+    <%= f.text_area :example_sentence, class: :form__text, id:"word_example_sentence" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :other, "自由記述" %><br />
+    <%= f.text_area :other, class: :form__text, id:"word_other" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "イメージ画像" %><br />
+    <%= f.file_field :image, id:"prototype_image" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "保存する", class: :form__btn  %>
+  </div>
+<% end %>
