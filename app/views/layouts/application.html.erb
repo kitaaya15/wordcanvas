@@ -22,7 +22,7 @@
             <div class="nav__right">
               <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
               <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__logout %>
-              <%= link_to "New Word", root_path, class: :nav__btn %>
+              <%= link_to "New Word", new_word_path, class: :nav__btn %>
             </div>
           <% else %>
             <div class="nav__right">

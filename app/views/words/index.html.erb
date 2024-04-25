@@ -1,7 +1,34 @@
+<!-- app/views/words/index.html.erb -->
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
       <h2 class="page-heading">New Words</h2>
+      <div class="word_item">
+        <div class="word_beginner">
+          <div class="beginner_title">Beginner</div>
+          <div class="beginner_content">
+            <% @beginners.each do |word| %>
+              <p><%= word.content %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="word_intermediate">
+          <div class="intermediate_title">Intermediate</div>
+          <div class="intermediate_content">
+            <% @intermediates.each do |word| %>
+              <p><%= word.content %></p>
+            <% end %>
+          </div>
+        </div>
+        <div class="word_advanced">
+          <div class="advanced_title">Advanced</div>
+          <div class="advanced_content">
+            <% @advanceds.each do |word| %>
+              <p><%= word.content %></p>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

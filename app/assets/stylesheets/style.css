@@ -89,9 +89,64 @@ a {
 
 /* フォーム周り */
 .form__wrapper{
+  text-align: center;
   width: 95%;
   min-height: calc(100vh - 161px);
   margin: 0 auto;
+}
+
+.word_item {
+  width: 100%;
+  height: 90vh;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.beginner_title, .intermediate_title, .advanced_title {
+  font-size: 20px;
+}
+
+.word_beginner {
+  flex-grow: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.beginner_content {
+  border-radius: 5px;
+  border: 1px #969694 solid;
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+.word_intermediate {
+  flex-grow: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.intermediate_content {
+  border-radius: 5px;
+  border: 1px #969694 solid;
+  flex-grow: 1;
+  margin-top: 10px;
+}
+
+.word_advanced {
+  flex-grow: 1;
+  margin: 0 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.advanced_content {
+  border-radius: 5px;
+  border: 1px #969694 solid;
+  flex-grow: 1;
+  margin-top: 10px;
 }
 
 .form__text {
@@ -100,6 +155,11 @@ a {
 
 .field{
   margin: 10px 0;
+}
+
+.select-box{
+  width: 13%;
+  height: 30px;
 }
 
 .actions{
