@@ -21,10 +21,6 @@ class WordsController < ApplicationController
     end
   end
 
-  def show
-    @word = Word.find(params[:id])
-  end
-
   private
 
   def words_for_level(level_name)

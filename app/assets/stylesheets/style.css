@@ -220,7 +220,7 @@ a {
   min-height: calc(100vh - 161px);
 }
 
-.prototype__heading{
+.prototype__hedding{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -232,11 +232,11 @@ a {
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image img {
-  display: block;  /* 画像をブロック要素として扱い、幅の設定が可能に */
-  margin: 0 auto;  /* 画像自体を中央に寄せる */
+.prototype__image{
+  width: 40%;
+  margin: 0 auto;
+  padding: 16px 0;
 }
-
 .prototype__detail{
   display: flex;
   align-items: center;
@@ -250,7 +250,7 @@ a {
 .prototype__manage{
   display: flex;
   justify-content: center;
-  padding: 10px;
+  padding-top: 16px;
 }
 .prototype__btn{
   display: block;
