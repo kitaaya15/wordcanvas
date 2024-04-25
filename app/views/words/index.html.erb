@@ -4,30 +4,9 @@
     <div class="form__wrapper">
       <h2 class="page-heading">New Words</h2>
       <div class="word_item">
-        <div class="word_beginner">
-          <div class="beginner_title">Beginner</div>
-          <div class="beginner_content">
-            <% @beginners.each do |word| %>
-              <p><%= word.content %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="word_intermediate">
-          <div class="intermediate_title">Intermediate</div>
-          <div class="intermediate_content">
-            <% @intermediates.each do |word| %>
-              <p><%= word.content %></p>
-            <% end %>
-          </div>
-        </div>
-        <div class="word_advanced">
-          <div class="advanced_title">Advanced</div>
-          <div class="advanced_content">
-            <% @advanceds.each do |word| %>
-              <p><%= word.content %></p>
-            <% end %>
-          </div>
-        </div>
+        <%= render 'words/word_section', words: @beginners, title: 'Beginner', section_class: 'word_beginner', title_class: 'beginner_title', content_class: 'beginner_content' %>
+        <%= render 'words/word_section', words: @intermediates, title: 'Intermediate', section_class: 'word_intermediate', title_class: 'intermediate_title', content_class: 'intermediate_content' %>
+        <%= render 'words/word_section', words: @advanceds, title: 'Advanced', section_class: 'word_advanced', title_class: 'advanced_title', content_class: 'advanced_content' %>
       </div>
     </div>
   </div>

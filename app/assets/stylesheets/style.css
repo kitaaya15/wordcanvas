@@ -114,11 +114,12 @@ a {
   flex-direction: column;
 }
 
-.beginner_content {
+.beginner_content, .intermediate_content, .advanced_content {
   border-radius: 5px;
   border: 1px #969694 solid;
   flex-grow: 1;
   margin-top: 10px;
+  font-size: 25px;
 }
 
 .word_intermediate {
@@ -128,25 +129,11 @@ a {
   flex-direction: column;
 }
 
-.intermediate_content {
-  border-radius: 5px;
-  border: 1px #969694 solid;
-  flex-grow: 1;
-  margin-top: 10px;
-}
-
 .word_advanced {
   flex-grow: 1;
   margin: 0 10px;
   display: flex;
   flex-direction: column;
-}
-
-.advanced_content {
-  border-radius: 5px;
-  border: 1px #969694 solid;
-  flex-grow: 1;
-  margin-top: 10px;
 }
 
 .form__text {

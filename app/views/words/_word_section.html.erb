@@ -1,0 +1,9 @@
+<!-- app/views/words/_word_section.html.erb -->
+<div class="word_section <%= section_class %>">
+  <div class="<%= title_class %>"><%= title %></div>
+  <div class="<%= content_class %>">
+    <% words.each do |word| %>
+      <p><%= word.content %></p>
+    <% end %>
+  </div>
+</div>
