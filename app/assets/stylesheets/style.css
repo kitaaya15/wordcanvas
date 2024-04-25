@@ -243,6 +243,13 @@ a {
   flex-direction: column;
   margin-bottom: 8px;
 }
+
+.detail__content{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
 .detail__title{
   font-size: 20px;
   font-weight: bold;
