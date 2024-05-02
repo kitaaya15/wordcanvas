@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Protospace</title>
+    <title>wordcanvas</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,30 +12,43 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="inner">
-        <div class="nav">
-          <div class="nav__left">
-            <%= link_to image_tag("logo.png", class: :logo), root_path %>
-          </div>
-          <% if user_signed_in? %>
-            <div class="nav__right">
-              <%= link_to "#{current_user.name}さん", user_path(current_user), class: :greeting__link%>
-              <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__logout %>
-              <%= link_to "New Word", new_word_path, class: :nav__btn %>
-            </div>
-          <% else %>
-            <div class="nav__right">
-              <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
-              <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
-            </div>
-          <% end %>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <%= link_to image_tag("logo.png", class: "navbar-brand"), root_path %>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to "#{current_user.name}さん", user_path(current_user), class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "New Word", new_word_path, class: "nav-link" %>
+              </li>
+            <% else %>
+              <li class="nav-item">
+                <%= link_to "ログイン", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "新規登録", new_user_registration_path, class: "nav-link" %>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
-    </header>
+    </nav>
+
     <%= yield %>
-    <footer class="footer">
-      <p class="copyright">Copyright © WORD CANVAS All rights reserved.</p>
+
+    <footer class="footer bg-light text-center py-3">
+      <div class="container">
+        <p class="mb-0">Copyright © WORD CANVAS All rights reserved.</p>
+      </div>
     </footer>
   </body>
 </html>

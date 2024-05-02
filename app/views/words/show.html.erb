@@ -1,0 +1,63 @@
+<main class="main">
+  <div class="inner">
+    <div class="prototype__wrapper">
+
+      <% if current_user == @word.user%>
+        <div class="prototype__manage">
+          <%= link_to "編集する", root_path, class: :prototype__btn %>
+          <%= link_to "削除する", root_path, class: :prototype__btn %>
+        </div>
+      <% end %>
+      <div class="detail__content">
+        <%= @word.content %>
+      </div>
+      <div class="prototype__image">
+        <%= image_tag @word.image.variant(resize: '200x200') %>
+      </div>
+      <div class="prototype__body">
+        <div class="prototype__detail">
+          <p class="detail__title">習得度</p>
+          <p class="detail__message">
+            <%= @word.level.name %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">意味</p>
+          <p class="detail__message">
+            <%= @word.meaning %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">発音記号</p>
+          <p class="detail__message">
+            <%= @word.phonetic_symbol %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">品詞</p>
+          <p class="detail__message">
+            <%= @word.part_of_speech %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">語源</p>
+          <p class="detail__message">
+            <%= @word.etymology %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">例文</p>
+          <p class="detail__message">
+            <%= @word.example_sentence %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">自由記述</p>
+          <p class="detail__message">
+            <%= @word.other %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

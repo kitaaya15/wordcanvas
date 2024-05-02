@@ -3,7 +3,7 @@
   <div class="<%= title_class %>"><%= title %></div>
   <div class="<%= content_class %>">
     <% words.each do |word| %>
-      <p><%= word.content %></p>
+      <p><%= link_to word.content, word_path(word) %></p>
     <% end %>
   </div>
 </div>

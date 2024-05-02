@@ -24,67 +24,36 @@ li {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
-  vertical-align: bottom;
-}
-
 a {
   text-decoration: none;
   color: #3b4043;
 }
 
 /* ヘッダー */
+.navbar-brand {
+  height: 50px;
+  width: auto;
+}
 
-.header {
-  background-color: #d7d8c7;
-  padding: 10px 0;
+/* ログイン */
+.login_main {
+  background-image: image-url("login.png");
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
 }
-.main {
-  background-color: #f1f1e8;
-}
-.inner {
-  width: 90%;
-  display: flex;
-  justify-content: center; 
-  margin: 0 auto;
-}
-.nav {
+
+.login_main::after {
+  content: "";
+  position: absolute;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-.logo {
-  width: 200px;
-  height: 80px;
-}
-.nav__btn{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  margin-top: 25px;
-  font-size: 0.8em;
-  color: #969694;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #969694 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-}
-.nav__btn:hover{
-  color: #fff;
-  background: #b9b9ac;
-}
-
-.nav__logout{
-  display: inline-block;
-  padding: 0.4em 1.6em;
-  font-size: 0.8em;
-  color: #b9b9ac;
-  text-decoration: none;
-  user-select: none;
-}
-.nav__logout:hover{
-  opacity: 0.5;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(206, 202, 202, 0.4);
+  z-index: -1;
 }
 
 /* フォーム周り */
@@ -220,7 +189,7 @@ a {
   min-height: calc(100vh - 161px);
 }
 
-.prototype__hedding{
+.prototype__heading{
   font-size: 24px;
   font-weight: bold;
   text-align: center;
@@ -232,17 +201,24 @@ a {
   text-align: center;
   text-decoration: underline;
 }
-.prototype__image{
-  width: 40%;
+.prototype__image img {
+  display: block;
   margin: 0 auto;
-  padding: 16px 0;
 }
+
 .prototype__detail{
   display: flex;
   align-items: center;
   flex-direction: column;
   margin-bottom: 8px;
 }
+
+.detail__content{
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
 .detail__title{
   font-size: 20px;
   font-weight: bold;
@@ -250,7 +226,7 @@ a {
 .prototype__manage{
   display: flex;
   justify-content: center;
-  padding-top: 16px;
+  padding: 10px;
 }
 .prototype__btn{
   display: block;
