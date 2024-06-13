@@ -1,5 +1,7 @@
 class WordsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_word, only: [:show, :edit, :update]
+
 
   def index
     @beginners = words_for_level('Beginner')
@@ -25,7 +27,26 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
   end
 
+  def edit
+    unless user_signed_in? && current_user == @word.user
+      redirect_to root_path
+      return
+    end
+  end
+
+  def update
+    if @word.update(word_params)
+      redirect_to word_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
+
+  def set_word
+    @word = Word.find(params[:id])
+  end
 
   def words_for_level(level_name)
     level_id = Level.find_by(name: level_name).id
