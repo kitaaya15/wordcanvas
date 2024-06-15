@@ -55,9 +55,9 @@ ActiveRecord::Schema[7.0].define(version: 2024_04_25_025540) do
   create_table "words", charset: "utf8", force: :cascade do |t|
     t.string "content", null: false
     t.integer "level_id", null: false
-    t.text "meaning"
-    t.text "phonetic_symbol"
-    t.text "part_of_speech"
+    t.string "meaning"
+    t.string "phonetic_symbol"
+    t.string "part_of_speech"
     t.text "etymology"
     t.text "example_sentence"
     t.text "other"

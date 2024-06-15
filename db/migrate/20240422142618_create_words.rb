@@ -3,9 +3,9 @@ class CreateWords < ActiveRecord::Migration[7.0]
     create_table :words do |t|
       t.string     :content             , null: false
       t.integer    :level_id            , null: false
-      t.text       :meaning
-      t.text       :phonetic_symbol
-      t.text       :part_of_speech
+      t.string     :meaning
+      t.string     :phonetic_symbol
+      t.string     :part_of_speech
       t.text       :etymology
       t.text       :example_sentence
       t.text       :other
