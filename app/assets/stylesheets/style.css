@@ -1,4 +1,6 @@
 /* リセットCSS */
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -15,9 +17,21 @@ div {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-4 {
+  color: var(--dark);
+  font-weight: 700;
+}
+
 body {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
-  color: #3b4043;
+  font-family: "Sora", sans-serif;
+  line-height: 1.7;
+  color: var(--body);
 }
 
 li {
@@ -25,14 +39,26 @@ li {
 }
 
 a {
+  color: var(--dark);
   text-decoration: none;
-  color: #3b4043;
+}
+
+:root {
+  --primary: #0d6efd;
+  --dark: #21252f;
+  --body: #888;
 }
 
 /* ヘッダー */
 .navbar-brand {
   height: 50px;
   width: auto;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* ログイン */
@@ -143,9 +169,25 @@ a {
 
 /* メイン */
 
-.greeting{
-  margin-bottom: 20px;
+.hero {
+  background-image: image-url("cover.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
 }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(37, 39, 71, 0.7);
+  z-index: -1;
+}
+
 .greeting__link{
   text-decoration: underline;
 }

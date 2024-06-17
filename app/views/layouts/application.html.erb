@@ -12,9 +12,12 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- navbar section -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark py-3">
       <div class="container">
-        <%= link_to image_tag("logo.png", class: "navbar-brand"), root_path %>
+        <%= link_to root_path, class: "navbar-brand-text" do %>
+          <h2 class="text-white pt-1">Word Canvas</h2>
+        <% end %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,10 +28,13 @@
                 <%= link_to "#{current_user.name}さん", user_path(current_user), class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-link" %>
+                <%= link_to "New Word", new_word_path, class: "nav-link" %>
               </li>
               <li class="nav-item">
-                <%= link_to "New Word", new_word_path, class: "nav-link" %>
+                <%= link_to "Message", root_path, class: "nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
               </li>
             <% else %>
               <li class="nav-item">
