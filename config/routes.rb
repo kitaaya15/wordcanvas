@@ -3,5 +3,9 @@ Rails.application.routes.draw do
   root to: "tweets#index"
   resources :words, only: [:new, :create, :show]
   resources :users
-  resources :tweets, only: [:index, :new, :create, :show]
+  resources :tweets, only: [:index, :new, :create, :show] do
+    collection do
+      get 'search'
+    end
+  end
 end
