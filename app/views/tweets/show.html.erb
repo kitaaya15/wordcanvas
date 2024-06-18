@@ -1,0 +1,23 @@
+<h1 class="text-center mt-5">Tweet Details</h1>
+<div class="d-flex justify-content-center">
+  <div class="tweet text-center mt-5">
+    <p><%= @tweet.user.name %></p>
+    <p><%= @tweet.content %></p>
+    <% if @tweet.image.attached? %>
+      <%= image_tag @tweet.image.variant(resize: '500x500'), class: "img-thumbnail" %>
+    <% end %>
+  </div>
+</div>
+<div class="d-flex justify-content-center mt-3">
+  <ul class="more_list list-inline">
+    <li class="list-inline-item">
+      <%= link_to '編集', edit_tweet_path(@tweet), class: 'btn btn-primary' %>
+    </li>
+    <li class="list-inline-item">
+      <%= link_to '削除', tweet_path(@tweet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+    </li>
+  </ul>
+</div>
+<div class="d-flex justify-content-center my-3">
+  <%= link_to '一覧へ戻る', tweets_path, class: 'btn btn-secondary' %>
+</div>

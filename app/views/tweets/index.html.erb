@@ -14,10 +14,10 @@
 <!-- hero section -->
 
 <!-- 検索フォーム -->
-<div class="search">
+<section id="search">
   <div class="container">
     <div class="row">
-      <div class="search-form text-center">
+      <div class="search-form mx-auto">
         <%= form_with url: search_tweets_path, method: :get, local: true do %>
           <div class="form-group">
             <%= label_tag :keyword, "Search Tweets" %>
@@ -30,17 +30,20 @@
       </div>
     </div>
   </div>
-</div>
+<section>
 
 
 <!-- ツイート一覧 -->
+<h1 class="tweet_list col-lg-7 ms-auto">Tweet List</h1>
 <div class="contents row">
   <% @tweets.each do |tweet| %>
-    <div class="tweet col-md-4">
-      <p><%= tweet.user.name %>: <%= tweet.content %></p>
+    <div class="tweet col-lg-5 ms-auto mt-5">
+      <p><%= tweet.user.name %></p>
       <% if tweet.image.attached? %>
-        <%= image_tag tweet.image %>
+        <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: "img-thumbnail"), tweet_path(tweet) %>
       <% end %>
+      <p><%= tweet.content %></p>
     </div>
   <% end %>
 </div>
+

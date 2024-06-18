@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   def create
     @tweet = current_user.tweets.build(tweet_params)
     if @tweet.save
-      redirect_to @tweet
+      redirect_to tweets_path
     else
       render :new
     end
@@ -18,6 +18,9 @@ class TweetsController < ApplicationController
 
   def show
     @tweet = Tweet.find(params[:id])
+  end
+
+  def edit
   end
 
   def search

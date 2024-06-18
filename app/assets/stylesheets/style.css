@@ -34,6 +34,11 @@ body {
   color: var(--body);
 }
 
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
 li {
   list-style: none;
 }
