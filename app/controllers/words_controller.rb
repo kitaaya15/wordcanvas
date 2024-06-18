@@ -42,6 +42,21 @@ class WordsController < ApplicationController
     redirect_to word_path
   end
 
+  def edit
+    unless user_signed_in? && current_user == @word.user
+      redirect_to root_path
+      return
+    end
+  end
+
+  def update
+    if @word.update(word_params)
+      redirect_to word_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_word
@@ -51,7 +66,7 @@ class WordsController < ApplicationController
   def correct_user
     redirect_to root_path, alert: "Not authorized" unless @word.user == current_user
   end
-
+  
   def words_for_level(level_name)
     level_id = Level.find_by(name: level_name).id
     Word.includes(:user).where(level_id: level_id).order(:content)

@@ -87,6 +87,11 @@ a {
   z-index: -1;
 }
 
+.login_form {
+  background-color: #fff;
+  border-radius: 7px;
+}
+
 /* フォーム周り */
 .form__wrapper{
   text-align: center;
@@ -155,6 +160,7 @@ a {
 
 .form__btn{
   display: inline-block;
+  margin-top: 20px;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
   color: #fff;

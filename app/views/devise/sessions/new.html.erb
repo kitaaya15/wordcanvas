@@ -1,25 +1,27 @@
 <div class="login_main vh-100 d-flex align-items-center" id=log_in>
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 mx-auto">
-        <h3 class="page-heading">log in</h3>
+      <div class="col-lg-3 mx-auto text-center">
+        <div class="login_form py-4">
+          <h3 class="page-heading ">log in</h3>
 
-        <%= form_with model: @user, url: user_session_path, local: true do |f| %>
+          <%= form_with model: @user, url: user_session_path, local: true do |f| %>
 
-          <div class="field">
-            <%= f.label :email, "E-mail" %><br />
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-          </div>
+            <div class="field">
+              <%= f.label :email, "E-mail" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            </div>
 
-          <div class="field">
-            <%= f.label :password, "Password（6文字以上）" %><br />
-            <%= f.password_field :password, autocomplete: "current-password" %>
-          </div>
+            <div class="field">
+              <%= f.label :password, "Password（6文字以上）" %><br />
+              <%= f.password_field :password, autocomplete: "current-password" %>
+            </div>
 
-          <div class="actions">
-            <%= f.submit "log in", class: :form__btn %>
-          </div>
-        <% end %>
+            <div class="actions">
+              <%= f.submit "log in", class: :form__btn %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
