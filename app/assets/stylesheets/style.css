@@ -1,4 +1,6 @@
 /* リセットCSS */
+@import url('https://fonts.googleapis.com/css2?family=Sora&display=swap');
+
 * {
   box-sizing: border-box;
 }
@@ -15,9 +17,26 @@ div {
   padding: 0;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-4 {
+  color: var(--dark);
+  font-weight: 700;
+}
+
 body {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
-  color: #3b4043;
+  font-family: "Sora", sans-serif;
+  line-height: 1.7;
+  color: var(--body);
+}
+
+section {
+  padding-top: 120px;
+  padding-bottom: 120px;
 }
 
 li {
@@ -25,14 +44,26 @@ li {
 }
 
 a {
+  color: var(--dark);
   text-decoration: none;
-  color: #3b4043;
+}
+
+:root {
+  --primary: #0d6efd;
+  --dark: #21252f;
+  --body: #888;
 }
 
 /* ヘッダー */
 .navbar-brand {
   height: 50px;
   width: auto;
+}
+
+.navbar .nav-link {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 /* ログイン */
@@ -149,48 +180,71 @@ a {
 
 /* メイン */
 
-.greeting{
-  margin-bottom: 20px;
-}
-.greeting__link{
-  text-decoration: underline;
-}
-.page-heading {
-  font-size: 30px;
-  margin-bottom: 28px;
-}
-.card__wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  min-height: calc(100vh - 161px);
-}
-.card {
-  width: calc((100% - 50px) / 3);
-  margin-bottom: 40px;
-}
-.card__img {
-  margin-bottom: 16px;
-}
-.card__title {
-  display: block;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: bold;
-}
-.card__summary {
-  font-size: 16px;
-}
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
+.hero {
+  background-image: image-url("cover.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  z-index: 2;
 }
 
-/* 詳細ページ */
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(37, 39, 71, 0.7);
+  z-index: -1;
+}
+
+/* 検索フォームのスタイル */
+.search {
+  margin-top: 20px; /* 必要に応じて調整 */
+}
+
+.search .container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-form {
+  width: 100%;
+  max-width: 600px; /* 最大幅を設定 */
+}
+
+.search-form .form-group {
+  margin-bottom: 10px;
+}
+
+.search-form .form-inline {
+  display: flex;
+}
+
+.search-form .form-control {
+  flex-grow: 1; /* フレックスボックスで幅を自動調整 */
+  margin-right: 10px; /* ボタンとの間に少し余白を追加 */
+}
+
+.search-form .btn {
+  white-space: nowrap; /* ボタンの幅が広がりすぎないようにする */
+}
+
+
+/* 単語帳詳細ページ */
+.prototype__wrapper.text-center .prototype__body {
+  text-align: center;
+}
+
+.prototype__wrapper.text-center .prototype__detail {
+  margin-bottom: 1rem; /* 各詳細セクションの間に適度なスペースを追加 */
+}
+
+.prototype__wrapper.text-center .prototype__image {
+  margin-bottom: 2rem; /* 画像の下にスペースを追加 */
+}
+
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
 }

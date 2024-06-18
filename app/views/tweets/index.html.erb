@@ -1,0 +1,49 @@
+<!-- hero section -->
+<div class="hero vh-100 d-flex align-items-center" id=home>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7 mx-auto text-center">
+        <h1 class="display-4 text-white">WordCanvas</h1>
+        <p class="text-white my-3">Embark on an odyssey through a world where love, laughter, and happiness reign supreme.
+        </p>
+        <%= link_to "Go to post", new_tweet_path, class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- hero section -->
+
+<!-- 検索フォーム -->
+<section id="search">
+  <div class="container">
+    <div class="row">
+      <div class="search-form mx-auto">
+        <%= form_with url: search_tweets_path, method: :get, local: true do %>
+          <div class="form-group">
+            <%= label_tag :keyword, "Search Tweets" %>
+          </div>
+          <div class="form-inline">
+            <%= text_field_tag :keyword, params[:keyword], class: "form-control", placeholder: "投稿を検索する" %>
+            <%= submit_tag "Search", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<section>
+
+
+<!-- ツイート一覧 -->
+<h1 class="text-center mt-5">Tweet List</h1>
+<div class="contents row">
+  <% @tweets.each do |tweet| %>
+    <div class="tweet col-lg-5 ms-auto text-center mt-5">
+      <p><%= link_to tweet.user.name, user_path(tweet.user) %></p>
+      <% if tweet.image.attached? %>
+        <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: "img-thumbnail"), tweet_path(tweet) %>
+      <% end %>
+      <p><%= tweet.content %></p>
+    </div>
+  <% end %>
+</div>
+

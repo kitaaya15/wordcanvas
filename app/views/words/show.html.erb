@@ -3,9 +3,11 @@
     <div class="prototype__wrapper">
 
       <% if current_user == @word.user%>
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_word_path(@word.id), class: :prototype__btn %>
-          <%= link_to "削除する", root_path, class: :prototype__btn %>
+        <div class="prototype__manage  d-flex gap-2">
+          <%= link_to "編集する", edit_word_path(@word), class: 'btn btn-primary' %>
+          <%= form_with(model: @word, method: :delete, local: true) do |form| %>
+            <%= form.submit "削除する", class: 'btn btn-danger' %>
+          <% end %>
         </div>
       <% end %>
       <div class="detail__content">

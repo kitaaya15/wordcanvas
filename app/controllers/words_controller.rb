@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_word, only: [:show, :edit, :update]
-
+  before_action :set_word, only: [:show, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
     @beginners = words_for_level('Beginner')
@@ -17,14 +17,29 @@ class WordsController < ApplicationController
   def create
     @word = Word.new(word_params)
     if @word.save
-      redirect_to root_path
+      redirect_to words_path
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def show
-    @word = Word.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @word.update(word_params)
+      redirect_to words_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @word.destroy
+    redirect_to word_path
   end
 
   def edit
@@ -48,6 +63,10 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id])
   end
 
+  def correct_user
+    redirect_to root_path, alert: "Not authorized" unless @word.user == current_user
+  end
+  
   def words_for_level(level_name)
     level_id = Level.find_by(name: level_name).id
     Word.includes(:user).where(level_id: level_id).order(:content)

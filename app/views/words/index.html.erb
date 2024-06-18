@@ -2,11 +2,12 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <h2 class="page-heading">New Words</h2>
+      <h2 class="page-heading mt-5">New Words</h2>
+      <%= link_to 'Add New Word', new_word_path, class: 'btn btn-primary my-3' %>
       <div class="word_item">
-        <%= render 'words/word_section', words: @beginners, title: 'Beginner', section_class: 'word_beginner', title_class: 'beginner_title', content_class: 'beginner_content' %>
-        <%= render 'words/word_section', words: @intermediates, title: 'Intermediate', section_class: 'word_intermediate', title_class: 'intermediate_title', content_class: 'intermediate_content' %>
-        <%= render 'words/word_section', words: @advanceds, title: 'Advanced', section_class: 'word_advanced', title_class: 'advanced_title', content_class: 'advanced_content' %>
+        <%= render 'words/word_section', words: @beginners, title: 'Beginner(学習中)', section_class: 'word_beginner', title_class: 'beginner_title', content_class: 'beginner_content' %>
+        <%= render 'words/word_section', words: @intermediates, title: 'Intermediate(意味がわかる)', section_class: 'word_intermediate', title_class: 'intermediate_title', content_class: 'intermediate_content' %>
+        <%= render 'words/word_section', words: @advanceds, title: 'Advanced(会話で使える)', section_class: 'word_advanced', title_class: 'advanced_title', content_class: 'advanced_content' %>
       </div>
     </div>
   </div>
