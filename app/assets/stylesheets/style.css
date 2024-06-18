@@ -226,7 +226,19 @@ a {
 }
 
 
-/* 詳細ページ */
+/* 単語帳詳細ページ */
+.prototype__wrapper.text-center .prototype__body {
+  text-align: center;
+}
+
+.prototype__wrapper.text-center .prototype__detail {
+  margin-bottom: 1rem; /* 各詳細セクションの間に適度なスペースを追加 */
+}
+
+.prototype__wrapper.text-center .prototype__image {
+  margin-bottom: 2rem; /* 画像の下にスペースを追加 */
+}
+
 .prototype__wrapper{
   min-height: calc(100vh - 161px);
 }
