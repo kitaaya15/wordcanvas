@@ -14,7 +14,7 @@
       <%= link_to '編集', edit_tweet_path(@tweet), class: 'btn btn-primary' %>
     </li>
     <li class="list-inline-item">
-      <%= link_to '削除', tweet_path(@tweet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+      <%= link_to '削除', tweet_path(@tweet.id), data: { turbo_method: :delete }, class: 'btn btn-danger' %>
     </li>
   </ul>
 </div>
