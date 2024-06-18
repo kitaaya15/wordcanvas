@@ -38,7 +38,7 @@
 <div class="contents row">
   <% @tweets.each do |tweet| %>
     <div class="tweet col-lg-5 ms-auto text-center mt-5">
-      <p><%= tweet.user.name %></p>
+      <p><%= link_to tweet.user.name, user_path(tweet.user) %></p>
       <% if tweet.image.attached? %>
         <%= link_to image_tag(tweet.image.variant(resize: '500x500'), class: "img-thumbnail"), tweet_path(tweet) %>
       <% end %>

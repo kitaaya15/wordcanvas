@@ -1,0 +1,20 @@
+<h1 class="text-center mt-5">Tweet List</h1>
+<% if @tweets.present? %>
+  <div class="contents row">
+    <% @tweets.each do |tweet| %>
+      <div class="tweet col-lg-5 ms-auto text-center mt-5">
+        <p><%= tweet.user.name %></p>
+        <% if tweet.image.attached? %>
+          <%= image_tag(tweet.image.variant(resize: '500x500'), class: "img-thumbnail") %>
+        <% end %>
+        <p><%= tweet.content %></p>
+        <% if tweet.user == current_user %>
+          <%= link_to 'Edit', edit_tweet_path(tweet), class: 'btn btn-secondary' %>
+          <%= link_to 'Delete', tweet_path(tweet), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>No posts found.</p>
+<% end %>
