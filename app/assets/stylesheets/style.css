@@ -68,7 +68,7 @@ a {
 
 /* ログイン */
 .login_main {
-  background-image: image-url("login.png");
+  background-image: url('/assets/login.png');
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -181,7 +181,7 @@ a {
 /* メイン */
 
 .hero {
-  background-image: image-url("cover.jpg");
+  background-image: url('/assets/cover.jpg');
   background-size: cover;
   background-attachment: fixed;
   position: relative;
